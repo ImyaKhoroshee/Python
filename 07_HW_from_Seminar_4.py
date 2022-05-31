@@ -31,7 +31,7 @@ def Fibonacci(n):
     list1.append(fib1)
     list1.append(fib2)
 
-    for i in range(2, n):
+    for i in range(2, n+1):
         fib1, fib2 = fib2, fib1 + fib2 
         list1.append(fib2)
 
@@ -40,7 +40,7 @@ def Fibonacci(n):
     fib4 = 1
     list2.insert(0, fib4)
 
-    for i in range(2, n):
+    for i in range(2, n+1):
         elem = fib3 - fib4
         fib3, fib4 = fib4, elem 
         list2.insert(0, elem)
