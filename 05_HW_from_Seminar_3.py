@@ -17,6 +17,8 @@ sum_of_odd_elements(my_list)
 # умножаем его самого на себя.
 # Пример: [2, 3, 4, 5, 6] => [12, 15, 16];  [2, 3, 5, 6] => [12, 15]
 
+# Вариант 1
+
 def product_of_pair_of_numbers(list):
     
     list2 = []
@@ -38,6 +40,17 @@ def product_of_pair_of_numbers(list):
 
 my_list = [2, 3, 5, 6, 2]
 product_of_pair_of_numbers(my_list)
+
+# Вариант 2
+
+import math
+def multiplication_of_pairs (spisok):
+    new_list = []
+    for i in range(math.ceil(len(spisok)/2)):   # math.ceil округлит длину списка до 3
+        new_list.append(spisok[i]*spisok[-i-1]) # таким образом 4ка умножится сама на себя
+    return new_list
+print(multiplication_of_pairs([2, 3, 4, 5, 6]))
+
 
 # Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между 
 # максимальным и минимальным значением дробной части элементов.
