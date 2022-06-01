@@ -3,7 +3,7 @@
 
 # Вариант 1
 
-import math
+# import math
 
 def transform_of_decimal_to_binary(number):
     binary_num = ''
@@ -24,30 +24,34 @@ print(bin(decimal))
 # Пример: для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
 def Fibonacci(n):
-    
-    list1 = []
-    fib1 = 0
-    fib2 = 1
-    list1.append(fib1)
-    list1.append(fib2)
-
-    for i in range(2, n+1):
-        fib1, fib2 = fib2, fib1 + fib2 
+    if n == 0:
+        print('F(0) = 0')
+        return 0
+        
+    if n > 0: 
+        list1 = []
+        fib1 = 0
+        fib2 = 1
+        list1.append(fib1)
         list1.append(fib2)
 
-    list2 = []
-    fib3 = 0
-    fib4 = 1
-    list2.insert(0, fib4)
+        for i in range(2, n+1):
+            fib1, fib2 = fib2, fib1 + fib2 
+            list1.append(fib2)
 
-    for i in range(2, n+1):
-        elem = fib3 - fib4
-        fib3, fib4 = fib4, elem 
-        list2.insert(0, elem)
+        list2 = []
+        fib3 = 0
+        fib4 = 1
+        list2.insert(0, fib4)
+
+        for i in range(2, n+1):
+            elem = fib3 - fib4
+            fib3, fib4 = fib4, elem 
+            list2.insert(0, elem)
  
-    list2.extend(list1) 
-    print (str(list2))
-    return list2
+        list2.extend(list1) 
+        print (str(list2))
+        return list2
 
 number = int(input('Enter your number: '))
 Fibonacci(number)
